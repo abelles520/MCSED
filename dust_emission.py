@@ -15,8 +15,8 @@ class DL07:
     def __init__(self, umin=2.0, gamma=0.05, qpah=2.5, mdust=7.0, 
                  umin_lims=[0.1, 25.0], gamma_lims=[0, 1.], 
                  qpah_lims=[0.47, 4.58], mdust_lims=[4.5,10.0],
-                 umin_delta=0.4, gamma_delta=0.02, qpah_delta=1.0, 
-                 mdust_delta=0.3, fixed=True, assume_energy_balance=False):
+                 umin_delta=0.2, gamma_delta=0.01, qpah_delta=0.5, 
+                 mdust_delta=0.15, fixed=True, assume_energy_balance=False):
         ''' Initialize Class
 
         Parameters

@@ -420,10 +420,10 @@ class polynomial:
 
 class exponential:
     ''' The exponential star formation history '''
-    def __init__(self, logsfr=1.0, age=-1.0, tau=-1.5, logsfr_lims=[-3., 3.],
-                 age_lims=[-3., 0.4], tau_lims=[-3.5, 3.5],
-                 logsfr_delta=0.3, age_delta=0.2, tau_delta=0.4,
-                 sign=1.0):
+    def __init__(self, logsfr=0.0, age=1.0, tau=-1.5, logsfr_lims=[-3., 3.],
+                 age_lims=[-2., 1.14], tau_lims=[-3.5, 1.14],
+                 logsfr_delta=0.1, age_delta=0.2, tau_delta=0.1,
+                 sign=-1.0):
         ''' Initialize this class
 
         Parameters
@@ -558,10 +558,10 @@ class double_powerlaw:
 
         SFR(t) = 10**a * ((t/tau)**b + (t/tau)**-c)**-1
     '''
-    def __init__(self, tau=-2.4, a=3.0, b=2., c=1., age=-.5,
-                 tau_lims=[-3., 1.], a_lims=[-1., 5.], b_lims=[0., 5.],
-                 c_lims=[0., 5.], age_lims=[-3., 0.4], tau_delta=0.2,
-                 a_delta=0.5, b_delta=0.5, c_delta=0.3, age_delta=0.2):
+    def __init__(self, tau=0.4, a=1.0, b=2., c=1., age=1,
+                 tau_lims=[-2., 1.1], a_lims=[-1., 5.], b_lims=[0.5, 5.5],
+                 c_lims=[0.5, 5.5], age_lims=[-3., 1.14], tau_delta=0.2,
+                 a_delta=0.25, b_delta=0.25, c_delta=0.2, age_delta=0.2):
         ''' Initialize this class
 
         Parameters
@@ -699,9 +699,9 @@ class binned_lsfr:
     The binned_lsfr SFH includes 6 bins of SFR at discrete time intervals
     and fits for the log SFR within each bin
     '''
-    def __init__(self, init_log_sfr=1.2, init_log_sfr_lims=[-5., 3.],
-                 init_log_sfr_delta=0.7,
-                 ages=[8., 8.5, 9., 9.5, 9.8, 10.12]):
+    def __init__(self, init_log_sfr=0, init_log_sfr_lims=[-5., 3.],
+                 init_log_sfr_delta=0.2,
+                 ages=[7.48, 8, 8.52, 9.04, 9.56, 10.07, 10.14]):
         ''' Initialize this class
 
         Parameters

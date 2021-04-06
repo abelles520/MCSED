@@ -153,9 +153,9 @@ class noll:
                      + (wave,dellam)^2}
     '''
     def __init__(self, EBV=0.15, delta=0.0, Eb=2.5, EBV_lims=[-0.05, 1.50],
-                 delta_lims=[-1., 1.], Eb_lims=[-0.2, 6.], EBV_delta=0.02,
-                 delta_delta=0.3, Eb_delta=1.0, 
-                 Rv=4.05, EBV_old_young=None):
+                 delta_lims=[-1.2, 0.5], Eb_lims=[-0.2, 6.], EBV_delta=0.05,
+                 delta_delta=0.15, Eb_delta=0.5, 
+                 Rv=4.05, EBV_old_young=0.44):
         ''' Initialize Class
 
         Parameters

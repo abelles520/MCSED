@@ -458,6 +458,7 @@ def read_input_file(args):
             else:
                 args.log.info('*CAUTION* %s.res filter curve does not exist:' % fname)
 
+
     nfilters = len(args.filt_dict)
     y = np.zeros((nobj, nfilters))
     yerr = np.zeros((nobj, nfilters))
@@ -1049,6 +1050,8 @@ def main(argv=None, ssp_info=None):
             del args.log
             filename.write( str( vars(args) ) )
             filename.close()
+
+
 if __name__ == '__main__':
     main()
 

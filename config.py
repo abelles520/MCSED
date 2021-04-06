@@ -10,15 +10,16 @@ ssp = 'fsps'           # options include: 'fsps'
 isochrone = 'padova'   # options include: 'padova'
 # SFH options include: 'constant', 'burst', 'polynomial', 'exponential', 
 #                      'double_powerlaw', 'binned_lsfr'
-sfh = 'constant' 
-dust_law = 'calzetti'  # options include: 'calzetti', 'noll', 'reddy', 
+sfh = 'binned_lsfr'
+# is there a redshift zero option? 
+dust_law = 'noll'  # options include: 'calzetti', 'noll', 'reddy', 
                        #                  'conroy', 'cardelli'
 
 # Dust emission parameters: 
 #   if False, do not fit for dust emission component and remove all filters
 #             redward of rest-frame wave_dust_em microns  (defined below)
 #   else, set to string of desired dust emission class 
-dust_em = False # options include: 'DL07', False 
+dust_em = 'DL07' # options include: 'DL07', False 
 # Assume energy balance or normalize the dust IR spectrum as a free parameter
 assume_energy_balance = False
 
@@ -46,11 +47,13 @@ metallicity = 0.0077
 
 # Nebular Emission Properties
 # The ionization parameter, logU, is held fixed
-logU = -2.5
+logU = -3.0
+# taken from Moustakas et al 2010
 
 # EMCEE parameters
-nwalkers = 100 
-nsteps   = 1000 
+nwalkers = 300 
+nsteps   = 2500 
+# calculate the number of walkers and steps needed
 
 # Number of test objects
 nobjects = 5
@@ -85,13 +88,13 @@ IGM_correct = False
 #   Supported image formats: eps, pdf, pgf, png, ps, raw, rgba, svg, svgz
 output_dict = {'parameters'    : True,   # fitted parameters
                'settings'      : True,   # user-defined fitting assumptions
-               'fitposterior'  : False,  # parameter posterior distributions
+               'fitposterior'  : True,  # parameter posterior distributions
                'bestfitspec'   : True,   # best-fit SED model
                'fluxdensity'   : True,   # modeled and observed photometry
                'lineflux'      : True,   # modeled and observed emission lines
-               'absindx'       : True,   # modeled, observed absorption indices
+               'absindx'       : False,   # modeled, observed absorption indices
                'triangle plot' : True,   # summary diagnostic plot
-               'sample plot'   : False,  # parameter estimates for MCMC chains
+               'sample plot'   : True,  # parameter estimates for MCMC chains
                'template spec' : True,   # save a plot of SSP spectra 
                'image format'  : 'png'}  # image type for plots
 
@@ -99,7 +102,7 @@ output_dict = {'parameters'    : True,   # fitted parameters
 param_percentiles = [5, 16, 50, 84, 95]
 
 # When running in parallel mode, utilize (Total cores) - reserved_cores
-reserved_cores = 2 # integer
+reserved_cores = 1 # integer
 
 # Input emission line strengths
 #   keys are emission line name (str) corresponding to Name in the input file
@@ -107,12 +110,9 @@ reserved_cores = 2 # integer
 #   measurements in input file have column names Name_FLUX, Name_ERR 
 #   corresponding to line flux and error (null=-99) and lines will only
 #   contribute to the model likelihood if they appear in the input file
-emline_list_dict = {'OII' : (3727., 0.5), 'OIII' : (5007., 0.5),
-                    'Hb'  : (4861., 1.),  'Ha' : (6563., 1.),
-                    'NII' : (6583., 0.5), 'NeIII': (3869., 0.5)
-                   }
+emline_list_dict = {'Hb'  : (4861., 1.),  'Ha' : (6563., 1.)}
 
-emline_factor = 1e-17 # numerical conversion from input values to units ergs/cm2/s
+emline_factor = 1 # numerical conversion from input values to units ergs/cm2/s
 
 # Input absorption line indices
 #   keys are index name (str) corresponding to Name in input file

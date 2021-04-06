@@ -4,33 +4,15 @@ Filter information from the Skelton+14 catalog
 
 """
 
-filt_dict = {0: 'SubB.res', 1: 'SubIB427.res', 2: 'SubIB445.res',
-             3: 'SubIB464.res', 4: 'CFHTi.res', 5: 'SubIB484.res',
-             6: 'SubIB505.res', 7: 'SubIB527.res', 8: 'SubIB550.res',
-             9: 'SubIB574.res', 10: 'SubIB598.res', 11: 'SubIB624.res',
-             12: 'SubIB651.res', 13: 'SubIB679.res', 14: 'SubIB709.res',
-             15: 'SubIB767.res', 16: 'SubIB827.res', 17: 'SubIB856.res',
-             18: 'SubIB907.res', 19: 'acs_f435w.res', 20: 'acs_f606w.res',
-             21: 'acs_f814w.res', 22: 'wfc3_f125w.res', 23: 'wfc3_f140w.res',
-             24: 'wfc3_f160w.res', 25: 'CFHTK.res', 26: 'iracch1.res',
-             27: 'iracch2.res', 28: 'VLT_vimos_U.res', 29: 'VLT_vimos_R.res',
-             30: 'lasilla22_WFI_U38.res', 31: 'lasilla22_WFI_B.res',
-             32: 'lasilla22_WFI_V.res', 33: 'lasilla22_WFI_B.res',
-             34: 'acs_f606w.res', 35: 'lasilla22_WFI_Rc.res',
-             36: 'acs_f775w.res', 37: 'lasilla22_WFI_I.res',
-             38: 'acs_f850lp.res', 39: 'acs_f850lp.res', 40: 'VLT_issac_J.res',
-             41: 'wircam_J.res', 42: 'VLT_issac_H.res', 43: 'wircam_Ks.res',
-             44: 'VLT_issac_Ks.res', 45: 'iracch3.res', 46: 'iracch4.res',
-             47: 'SubIB738.res', 48: 'SubIB797.res', 49: 'KPNO_mosaicU.res',
-             50: 'keck_LRIS_g.res', 51: 'keck_LRIS_Rs.res', 52: 'SubV.res',
-             53: 'Subrp.res', 54: 'Subip.res', 55: 'Subzp.res',
-             56: 'Sub_moircs_H.res', 57: 'Sub_moircs_J.res',
-             58: 'Sub_moircs_Ks.res', 59: 'CFHTu.res', 60: 'CFHTg.res',
-             61: 'CFHTr.res', 62: 'CFHTz.res', 63: 'ukidss_y.res',
-             64: 'ukidss_h.res', 65: 'ukidss_j.res', 66: 'ukidss_k.res',
-             67: 'newfirm_J1.res', 68: 'newfirm_J2.res', 69: 'newfirm_J3.res',
-             70: 'newfirm_H1.res', 71: 'newfirm_H2.res', 72: 'newfirm_ks.res',
-             73: 'wircam_H.res', 74: 'wircam_J.res', 75: 'wircam_Ks.res'}
+filt_dict = {0: '2MASS_H.res', 1:'2MASS_J.res', 2:'2MASS_Ks.res', 3:'GALEXNUV.res', 4:'GALEXFUV.res',
+             5:'Herschel_PACS_103.res', 6:'Herschel_PACS_167.res', 7:'Herschel_PACS_72.res',
+             8:'Herschel_SPIRE_252.res', 9:'Herschel_SPIRE_353.res', 10:'Herschel_SPIRE_511.res',
+             11:'IRAC_3.6.res', 12:'IRAC_4.5.res', 13:'IRAC_5.7.res', 14:'IRAC_8.0.res', 15:'Ic.res',
+             16:'MIPS_157.res', 17:'MIPS_24.res', 18:'MIPS_72.res', 19:'Rc.res', 20:'WISE_W3.res',
+             21:'planck_850.res', 22:'scuba_850.res', 23:'sloan_g.res', 24:'sloan_i.res',
+             25:'sloan_r.res', 26:'sloan_u.res', 27:'sloan_z.res', 28:'swift_uvm2.res', 29:'swift_uvw1.res',
+             30:'swift_uvw2.res', 31:'B.res', 32:'V.res'}
+             
 
 # Catalog column name of filter and dictionary value to the filter file
 catalog_filter_dict, catalog_maglim_dict = {}, {}

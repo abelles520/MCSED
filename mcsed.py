@@ -20,7 +20,7 @@ from scipy.interpolate import interp1d
 from astropy.constants import c as clight
 import numpy as np
 
-plt.ioff() 
+#plt.ioff() 
 
 import seaborn as sns
 sns.set_context("talk") # options include: talk, poster, paper
@@ -703,9 +703,11 @@ class Mcsed:
             else:
                 return -np.inf, np.array([-np.inf, -np.inf, -np.inf])
 
-    def get_init_walker_values(self, kind='ball', num=None):
+    def get_init_walker_values(self, kind='uniform', num=None):
         ''' Before running emcee, this function generates starting points
         for each walker in the MCMC process.
+
+        kind='uniform' 
 
         Returns
         -------
@@ -728,8 +730,10 @@ class Mcsed:
         if kind == 'ball':
             pos = emcee.utils.sample_ball(theta, thetae, size=num)
         else:
-            pos = (np.random.rand(num)[:, np.newaxis] *
-                   (theta_lims[:, 1]-theta_lims[:, 0]) + theta_lims[:, 0])
+            ran = (theta_lims[:, 1]-theta_lims[:, 0])[np.newaxis, :]
+            pos = (np.random.rand(num, len(theta_lims))*
+                   ran*0.8 + theta_lims[np.newaxis, :, 0]+0.1*ran)
+
         return pos
 
     def get_param_names(self):
@@ -787,7 +791,7 @@ class Mcsed:
             if getattr(self, var) is None:
                 self.error('The variable %s must be set first' % var)
 
-        pos = self.get_init_walker_values(kind='ball')
+        pos = self.get_init_walker_values(kind='uniform')
         ndim = pos.shape[1]
         start = time.time()
         sampler = emcee.EnsembleSampler(self.nwalkers, ndim, self.lnprob,
