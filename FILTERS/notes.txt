@@ -1,3 +1,0 @@
-filter curves for HDFN from http://www.astro.caltech.edu/~capak/hdf/filters/
-
-check munics z band -- using sdss z currently
